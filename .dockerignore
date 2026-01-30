@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.gitignore
+.env
+.env.*
+!.env.example
+Dockerfile
+docker-compose.yml
+README.md
+.storybook
+storybook-static
+storybook.log
+*.tsbuildinfo
+next-env.d.ts
+.vercel
+.claude
