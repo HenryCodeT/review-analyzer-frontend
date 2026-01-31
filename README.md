@@ -298,6 +298,10 @@ Interactive UI component documentation and playground available at `http://local
 
 ![Storybook UI](public/storybook-ui.png)
 
+```bash
+pnpm storybook
+```
+
 ### Build & Run
 
 ```bash
