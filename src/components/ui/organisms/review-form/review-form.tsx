@@ -26,8 +26,8 @@ export function ReviewForm({
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <TextareaField
-        label="Comentario del cliente"
-        placeholder="Pega aquí el comentario del cliente para analizar..."
+        label="Customer Review"
+        placeholder="Paste the customer review here to analyze..."
         value={text}
         onChange={(e) => setText(e.target.value)}
         inputSize="large"
@@ -43,7 +43,7 @@ export function ReviewForm({
         disabled={!text.trim() || disabled}
       >
         <Sparkles className="h-4 w-4" />
-        Analizar con IA
+        Analyze with AI
       </Button>
     </form>
   );

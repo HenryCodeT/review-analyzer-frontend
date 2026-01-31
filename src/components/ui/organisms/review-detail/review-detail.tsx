@@ -23,9 +23,9 @@ const SENTIMENT_VARIANT: Record<Sentiment, "success" | "warning" | "error"> = {
 };
 
 const SENTIMENT_LABEL: Record<Sentiment, string> = {
-  POSITIVE: "Positivo",
+  POSITIVE: "Positive",
   NEUTRAL: "Neutral",
-  NEGATIVE: "Negativo",
+  NEGATIVE: "Negative",
 };
 
 export interface ReviewDetailProps {
@@ -69,7 +69,7 @@ export function ReviewDetail({
       <CardHeader>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <Heading level={5}>Detalle del Review</Heading>
+            <Heading level={5}>Review Detail</Heading>
             <Badge
               variant={SENTIMENT_VARIANT[detail.sentiment]}
               style="subtle"
@@ -86,7 +86,7 @@ export function ReviewDetail({
       <CardContent className="space-y-4">
         <div>
           <p className="text-xs font-semibold text-font-tertiary mb-1">
-            Texto Original
+            Original Text
           </p>
           <p className="text-sm text-font-primary leading-relaxed">
             {detail.rawText}
@@ -95,7 +95,7 @@ export function ReviewDetail({
 
         <div>
           <p className="text-xs font-semibold text-font-tertiary mb-1">
-            Resumen
+            Summary
           </p>
           <p className="text-sm text-font-primary leading-relaxed">
             {detail.summary}
@@ -105,7 +105,7 @@ export function ReviewDetail({
         {detail.suggestedActions.length > 0 && (
           <div>
             <p className="text-xs font-semibold text-font-tertiary mb-1">
-              Acciones Sugeridas
+              Suggested Actions
             </p>
             <ul className="space-y-1">
               {detail.suggestedActions.map((action, idx) => (
@@ -123,7 +123,7 @@ export function ReviewDetail({
 
         <div>
           <p className="text-xs font-semibold text-font-tertiary mb-1">
-            Respuesta Sugerida
+            Suggested Response
           </p>
           <p className="text-sm text-font-primary leading-relaxed">
             {detail.suggestedResponse}
@@ -131,10 +131,10 @@ export function ReviewDetail({
         </div>
 
         <div className="flex gap-4 pt-2 text-xs text-font-tertiary">
-          <span>Modelo: {detail.modelProvider} ({detail.modelVersion})</span>
-          {detail.language && <span>Idioma: {detail.language}</span>}
+          <span>Model: {detail.modelProvider} ({detail.modelVersion})</span>
+          {detail.language && <span>Language: {detail.language}</span>}
           <span>
-            Fecha: {new Date(detail.createdAt).toLocaleDateString("es-ES")}
+            Date: {new Date(detail.createdAt).toLocaleDateString("en-US")}
           </span>
         </div>
       </CardContent>

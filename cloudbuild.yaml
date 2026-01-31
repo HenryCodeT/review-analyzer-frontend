@@ -1,0 +1,20 @@
+steps:
+  # Paso 1: Construir la imagen de Docker
+  - name: "gcr.io/cloud-builders/docker"
+    args:
+      [
+        "build",
+        "-t",
+        "us-central1-docker.pkg.dev/project-e55bba45-a364-4b35-9ba/repo-frontend/sentiment-frontend",
+        "--build-arg",
+        "NEXT_PUBLIC_API_BASE_URL=$_NEXT_PUBLIC_API_BASE_URL",
+        ".",
+      ]
+
+# Paso 2: Subir la imagen a Artifact Registry
+images:
+  - "us-central1-docker.pkg.dev/project-e55bba45-a364-4b35-9ba/repo-frontend/sentiment-frontend"
+
+# Definimos que la variable es obligatoria para el build
+substitutions:
+  _NEXT_PUBLIC_API_BASE_URL: "default_if_not_provided"

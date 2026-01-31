@@ -39,10 +39,9 @@ export default function AnalysisPage() {
   return (
     <div className="space-y-8">
       <div>
-        <Heading level={3}>Análisis de Comentarios</Heading>
+        <Heading level={3}>Review Analysis</Heading>
         <p className="mt-1 text-sm text-font-tertiary">
-          Pega el comentario de un cliente para obtener un análisis automático
-          con IA.
+          Paste a customer review to get an automated AI analysis.
         </p>
       </div>
 
@@ -76,8 +75,8 @@ export default function AnalysisPage() {
 
           <div className="space-y-3">
             <TextareaField
-              label="Respuesta sugerida"
-              description="Puedes editar la respuesta antes de enviarla."
+              label="Suggested Response"
+              description="You can edit the response before sending it."
               value={editedResponse || result.suggestedResponse}
               onChange={(e) => setEditedResponse(e.target.value)}
               rows={4}
@@ -95,18 +94,18 @@ export default function AnalysisPage() {
                   disabled={sendSuccess}
                 >
                   <Send className="h-4 w-4" />
-                  Enviar respuesta
+                  Send Response
                 </Button>
               ) : (
                 <div className="flex items-center gap-2 text-sm font-medium text-font-success">
                   <CheckCircle className="h-4 w-4" />
-                  Respuesta enviada correctamente
+                  Response sent successfully
                 </div>
               )}
 
               <Button variant="default" onClick={reset}>
                 <RotateCcw className="h-4 w-4" />
-                Nuevo análisis
+                New Analysis
               </Button>
             </div>
           </div>

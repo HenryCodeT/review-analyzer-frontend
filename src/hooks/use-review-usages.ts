@@ -29,7 +29,7 @@ export function useReviewUsages() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error al cargar los registros de uso";
+          : "Error loading usage records";
       setError(message);
     } finally {
       setIsLoading(false);

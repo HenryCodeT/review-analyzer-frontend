@@ -21,7 +21,7 @@ export function useReviewDetail() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error al cargar el detalle del review";
+          : "Error loading review detail";
       setError(message);
     } finally {
       setIsLoading(false);

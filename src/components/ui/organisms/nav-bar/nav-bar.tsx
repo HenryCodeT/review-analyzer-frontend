@@ -7,10 +7,10 @@ import { cn } from "@/lib/utils";
 import { MessageSquareText, History, BarChart3, Send } from "lucide-react";
 
 const NAV_ITEMS = [
-  { href: "/", label: "Análisis", icon: MessageSquareText },
-  { href: "/history", label: "Historial", icon: History },
-  { href: "/metrics", label: "Métricas", icon: BarChart3 },
-  { href: "/usages", label: "Uso", icon: Send },
+  { href: "/", label: "Analysis", icon: MessageSquareText },
+  { href: "/history", label: "History", icon: History },
+  { href: "/metrics", label: "Metrics", icon: BarChart3 },
+  { href: "/usages", label: "Usage", icon: Send },
 ];
 
 export function NavBar() {

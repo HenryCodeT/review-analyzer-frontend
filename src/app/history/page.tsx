@@ -17,15 +17,15 @@ const SENTIMENT_VARIANT: Record<Sentiment, "success" | "warning" | "error"> = {
 };
 
 const SENTIMENT_LABEL: Record<Sentiment, string> = {
-  POSITIVE: "Positivo",
+  POSITIVE: "Positive",
   NEUTRAL: "Neutral",
-  NEGATIVE: "Negativo",
+  NEGATIVE: "Negative",
 };
 
 const columns: DataTableColumn<ReviewHistoryItemDto>[] = [
   {
     key: "rawText",
-    header: "Comentario",
+    header: "Review",
     className: "max-w-xs",
     render: (item) => (
       <span className="line-clamp-2 text-font-primary">{item.rawText}</span>
@@ -33,7 +33,7 @@ const columns: DataTableColumn<ReviewHistoryItemDto>[] = [
   },
   {
     key: "sentiment",
-    header: "Sentimiento",
+    header: "Sentiment",
     render: (item) => (
       <Badge
         variant={SENTIMENT_VARIANT[item.sentiment]}
@@ -47,10 +47,10 @@ const columns: DataTableColumn<ReviewHistoryItemDto>[] = [
   },
   {
     key: "createdAt",
-    header: "Fecha",
+    header: "Date",
     render: (item) => (
       <span className="text-font-tertiary">
-        {new Date(item.createdAt).toLocaleDateString("es-ES", {
+        {new Date(item.createdAt).toLocaleDateString("en-US", {
           day: "2-digit",
           month: "short",
           year: "numeric",
@@ -88,9 +88,9 @@ export default function HistoryPage() {
   return (
     <div className="space-y-8">
       <div>
-        <Heading level={3}>Historial de Análisis</Heading>
+        <Heading level={3}>Analysis History</Heading>
         <p className="mt-1 text-sm text-font-tertiary">
-          Consulta los análisis realizados anteriormente.
+          View previously completed analyses.
         </p>
       </div>
 
@@ -118,7 +118,7 @@ export default function HistoryPage() {
         onNextPage={nextPage}
         onPrevPage={prevPage}
         onRowClick={handleRowClick}
-        emptyMessage="No hay análisis registrados aún."
+        emptyMessage="No analyses recorded yet."
       />
     </div>
   );

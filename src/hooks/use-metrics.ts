@@ -30,7 +30,7 @@ export function useMetrics() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error al cargar el resumen de métricas";
+          : "Error loading metrics summary";
       setError(message);
     } finally {
       setIsLoadingSummary(false);
@@ -52,7 +52,7 @@ export function useMetrics() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error al cargar las métricas";
+          : "Error loading metrics";
       setError(message);
     } finally {
       setIsLoadingList(false);

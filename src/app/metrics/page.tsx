@@ -24,7 +24,7 @@ const columns: DataTableColumn<ReviewMetricItemDto>[] = [
     header: "Tokens",
     render: (item) => (
       <span className="text-font-primary">
-        {item.totalTokens.toLocaleString("es-ES")}
+        {item.totalTokens.toLocaleString("en-US")}
         <span className="ml-1 text-xs text-font-tertiary">
           ({item.inputTokens}↑ {item.outputTokens}↓)
         </span>
@@ -33,7 +33,7 @@ const columns: DataTableColumn<ReviewMetricItemDto>[] = [
   },
   {
     key: "cost",
-    header: "Costo",
+    header: "Cost",
     render: (item) => (
       <span className="text-font-primary">
         ${item.estimatedCost.toFixed(4)}
@@ -42,14 +42,14 @@ const columns: DataTableColumn<ReviewMetricItemDto>[] = [
   },
   {
     key: "latency",
-    header: "Latencia",
+    header: "Latency",
     render: (item) => (
       <span className="text-font-primary">{item.latencyMs} ms</span>
     ),
   },
   {
     key: "status",
-    header: "Estado",
+    header: "Status",
     render: (item) => (
       <Badge
         variant={item.status === "success" ? "success" : "error"}
@@ -62,10 +62,10 @@ const columns: DataTableColumn<ReviewMetricItemDto>[] = [
   },
   {
     key: "createdAt",
-    header: "Fecha",
+    header: "Date",
     render: (item) => (
       <span className="text-font-tertiary text-xs">
-        {new Date(item.createdAt).toLocaleDateString("es-ES", {
+        {new Date(item.createdAt).toLocaleDateString("en-US", {
           day: "2-digit",
           month: "short",
           hour: "2-digit",
@@ -92,9 +92,9 @@ export default function MetricsPage() {
   return (
     <div className="space-y-8">
       <div>
-        <Heading level={3}>Métricas</Heading>
+        <Heading level={3}>Metrics</Heading>
         <p className="mt-1 text-sm text-font-tertiary">
-          Monitorea el uso, costo y rendimiento del análisis con IA.
+          Monitor AI analysis usage, cost, and performance.
         </p>
       </div>
 
@@ -108,7 +108,7 @@ export default function MetricsPage() {
 
       <div>
         <Heading level={5} className="mb-4">
-          Métricas Individuales
+          Individual Metrics
         </Heading>
         <DataTable
           columns={columns}
@@ -118,7 +118,7 @@ export default function MetricsPage() {
           totalPages={totalPages}
           onNextPage={nextPage}
           onPrevPage={prevPage}
-          emptyMessage="No hay métricas registradas aún."
+          emptyMessage="No metrics recorded yet."
         />
       </div>
     </div>

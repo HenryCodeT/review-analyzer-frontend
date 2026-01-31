@@ -29,7 +29,7 @@ export function useReviewHistory() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error al cargar el historial";
+          : "Error loading history";
       setError(message);
     } finally {
       setIsLoading(false);

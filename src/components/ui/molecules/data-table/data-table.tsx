@@ -35,7 +35,7 @@ export function DataTable<T>({
   onNextPage,
   onPrevPage,
   onRowClick,
-  emptyMessage = "No hay datos disponibles",
+  emptyMessage = "No data available",
   className,
 }: DataTableProps<T>) {
   if (isLoading) {
@@ -105,7 +105,7 @@ export function DataTable<T>({
       {totalPages > 1 && (
         <div className="flex items-center justify-between pt-4">
           <span className="text-sm text-font-tertiary">
-            Página {currentPage} de {totalPages}
+            Page {currentPage} of {totalPages}
           </span>
           <div className="flex gap-2">
             <Button
@@ -115,7 +115,7 @@ export function DataTable<T>({
               onClick={onPrevPage}
             >
               <ChevronLeft className="h-4 w-4" />
-              Anterior
+              Previous
             </Button>
             <Button
               variant="default"
@@ -123,7 +123,7 @@ export function DataTable<T>({
               disabled={currentPage >= totalPages}
               onClick={onNextPage}
             >
-              Siguiente
+              Next
               <ChevronRight className="h-4 w-4" />
             </Button>
           </div>

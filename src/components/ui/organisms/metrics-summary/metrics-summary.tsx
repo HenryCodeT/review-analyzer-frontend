@@ -35,36 +35,36 @@ export function MetricsSummary({ summary, isLoading }: MetricsSummaryProps) {
           isLoading={isLoading}
         />
         <MetricCard
-          title="Tokens Usados"
-          value={summary?.totalTokens?.toLocaleString("es-ES") ?? 0}
+          title="Tokens Used"
+          value={summary?.totalTokens?.toLocaleString("en-US") ?? 0}
           icon={<Coins className="h-5 w-5" />}
           isLoading={isLoading}
         />
         <MetricCard
-          title="Costo Estimado"
+          title="Estimated Cost"
           value={`$${summary?.totalCost?.toFixed(4) ?? "0.0000"}`}
           icon={<DollarSign className="h-5 w-5" />}
           isLoading={isLoading}
         />
         <MetricCard
-          title="Latencia Promedio"
+          title="Average Latency"
           value={`${summary?.averageLatencyMs?.toFixed(0) ?? 0} ms`}
           icon={<Clock className="h-5 w-5" />}
           isLoading={isLoading}
         />
         <MetricCard
-          title="Tasa de Éxito"
+          title="Success Rate"
           value={`${successRate}%`}
           icon={<CheckCircle className="h-5 w-5" />}
           description={
             summary
-              ? `${summary.successCount} exitosos / ${summary.errorCount} errores`
+              ? `${summary.successCount} successful / ${summary.errorCount} errors`
               : undefined
           }
           isLoading={isLoading}
         />
         <MetricCard
-          title="Errores"
+          title="Errors"
           value={summary?.errorCount ?? 0}
           icon={<XCircle className="h-5 w-5" />}
           isLoading={isLoading}
@@ -75,7 +75,7 @@ export function MetricsSummary({ summary, isLoading }: MetricsSummaryProps) {
         <Card variant="outlined">
           <CardHeader>
             <CardTitle className="text-sm font-semibold text-font-secondary">
-              Distribución de Sentimientos
+              Sentiment Distribution
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -83,7 +83,7 @@ export function MetricsSummary({ summary, isLoading }: MetricsSummaryProps) {
             <div className="mt-3 flex gap-4">
               <div className="flex items-center gap-2">
                 <Badge variant="success" style="subtle" size="small">
-                  Positivo: {summary.sentimentBreakdown.positive}
+                  Positive: {summary.sentimentBreakdown.positive}
                 </Badge>
               </div>
               <div className="flex items-center gap-2">
@@ -93,7 +93,7 @@ export function MetricsSummary({ summary, isLoading }: MetricsSummaryProps) {
               </div>
               <div className="flex items-center gap-2">
                 <Badge variant="error" style="subtle" size="small">
-                  Negativo: {summary.sentimentBreakdown.negative}
+                  Negative: {summary.sentimentBreakdown.negative}
                 </Badge>
               </div>
             </div>

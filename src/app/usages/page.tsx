@@ -20,7 +20,7 @@ const columns: DataTableColumn<ReviewUsageItemDto>[] = [
   },
   {
     key: "agentId",
-    header: "Agente",
+    header: "Agent",
     render: (item) => (
       <span className="text-sm text-font-primary">
         {item.agentId || (
@@ -31,7 +31,7 @@ const columns: DataTableColumn<ReviewUsageItemDto>[] = [
   },
   {
     key: "editedResponse",
-    header: "Respuesta editada",
+    header: "Edited Response",
     className: "max-w-xs",
     render: (item) => (
       <span className="line-clamp-2 text-sm text-font-secondary">
@@ -43,24 +43,24 @@ const columns: DataTableColumn<ReviewUsageItemDto>[] = [
   },
   {
     key: "responseSent",
-    header: "Enviada",
+    header: "Sent",
     render: (item) => (
       <Badge
         variant={item.responseSent ? "success" : "default"}
         style="subtle"
         size="small"
       >
-        {item.responseSent ? "Sí" : "No"}
+        {item.responseSent ? "Yes" : "No"}
       </Badge>
     ),
   },
   {
     key: "sentAt",
-    header: "Fecha envío",
+    header: "Sent Date",
     render: (item) =>
       item.sentAt ? (
         <span className="text-xs text-font-tertiary">
-          {new Date(item.sentAt).toLocaleDateString("es-ES", {
+          {new Date(item.sentAt).toLocaleDateString("en-US", {
             day: "2-digit",
             month: "short",
             year: "numeric",
@@ -74,10 +74,10 @@ const columns: DataTableColumn<ReviewUsageItemDto>[] = [
   },
   {
     key: "createdAt",
-    header: "Creado",
+    header: "Created",
     render: (item) => (
       <span className="text-xs text-font-tertiary">
-        {new Date(item.createdAt).toLocaleDateString("es-ES", {
+        {new Date(item.createdAt).toLocaleDateString("en-US", {
           day: "2-digit",
           month: "short",
           year: "numeric",
@@ -103,9 +103,9 @@ export default function UsagesPage() {
   return (
     <div className="space-y-8">
       <div>
-        <Heading level={3}>Uso de respuestas</Heading>
+        <Heading level={3}>Response Usage</Heading>
         <p className="mt-1 text-sm text-font-tertiary">
-          Registro de respuestas generadas, editadas y enviadas a clientes.
+          Log of responses generated, edited, and sent to customers.
         </p>
       </div>
 
@@ -123,7 +123,7 @@ export default function UsagesPage() {
         totalPages={totalPages}
         onNextPage={nextPage}
         onPrevPage={prevPage}
-        emptyMessage="No hay registros de uso aún."
+        emptyMessage="No usage records yet."
       />
     </div>
   );

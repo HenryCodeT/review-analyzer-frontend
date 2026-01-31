@@ -26,7 +26,7 @@ export function useReviewAnalysis() {
       const message =
         err instanceof ApiError
           ? err.message
-          : "Error inesperado al analizar el comentario";
+          : "Unexpected error while analyzing the review";
       setError(message);
     } finally {
       setIsAnalyzing(false);
@@ -53,7 +53,7 @@ export function useReviewAnalysis() {
         const message =
           err instanceof ApiError
             ? err.message
-            : "Error inesperado al enviar la respuesta";
+            : "Unexpected error while sending the response";
         setError(message);
       } finally {
         setIsSending(false);

@@ -12,11 +12,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "ReviewAI — Análisis de Comentarios",
+    default: "ReviewAI — Review Analysis",
     template: "%s | ReviewAI",
   },
   description:
-    "Herramienta de análisis de comentarios de clientes con IA para equipos de soporte e-commerce.",
+    "AI-powered customer review analysis tool for e-commerce support teams.",
 };
 
 export default function RootLayout({
@@ -25,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="en">
       <body className={montserrat.className}>
         <AppLayout>{children}</AppLayout>
       </body>

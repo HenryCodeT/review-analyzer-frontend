@@ -14,7 +14,7 @@ const SENTIMENT_CONFIG: Record<
 > = {
   POSITIVE: {
     variant: "success",
-    label: "Positivo",
+    label: "Positive",
     icon: <CheckCircle className="h-4 w-4" />,
   },
   NEUTRAL: {
@@ -24,7 +24,7 @@ const SENTIMENT_CONFIG: Record<
   },
   NEGATIVE: {
     variant: "error",
-    label: "Negativo",
+    label: "Negative",
     icon: <AlertTriangle className="h-4 w-4" />,
   },
 };
@@ -47,7 +47,7 @@ export function ReviewResult({
   return (
     <div className={cn("space-y-4", className)}>
       <div className="flex items-center gap-3">
-        <Heading level={5}>Resultado del Análisis</Heading>
+        <Heading level={5}>Analysis Result</Heading>
         <Badge variant={config.variant} style="subtle" size="default" dot>
           {config.label}
         </Badge>
@@ -56,7 +56,7 @@ export function ReviewResult({
       <Card variant="filled">
         <CardHeader>
           <CardTitle className="text-sm font-semibold text-font-secondary">
-            Resumen
+            Summary
           </CardTitle>
         </CardHeader>
         <CardContent>
@@ -68,7 +68,7 @@ export function ReviewResult({
         <Card variant="filled">
           <CardHeader>
             <CardTitle className="text-sm font-semibold text-font-secondary">
-              Acciones Sugeridas
+              Suggested Actions
             </CardTitle>
           </CardHeader>
           <CardContent>
